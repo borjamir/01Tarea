@@ -20,12 +20,12 @@ plt.title('Espectro del Sol (Flujo vs Longitud de Onda)')
 plt.legend()
 
 """
-Dado que x1-x0 = 20 = constante podemos considerarlo como un trazador lineal
-por lo que podemos aplicar el metodo del trapecio
+Dado que delta x varia muy poco en intervalos muy grande podemos considerarlo como 
+un trazador lineal por lo que podemos aplicar el metodo del trapecio
 """
 def integraltrap(x,y):
     """
-    Recibe preimagen e imagen de funcion con y 
+    Recibe preimagen e imagen de funcion y 
     encuentra integral utilizando el metodo del trapezio
     """
     contador=0
@@ -45,3 +45,9 @@ ctesolar=sol*10**-12 # en W/m2
 luminosidadtot= ctesolar*2.81e23
 
 integralcalc=sinteg.trapz(flujo,longitud)
+
+ctesolar2=integralcalc*10**-12
+
+luminosidadtot2=ctesolar*2.81e23
+
+plt.savefig('espectro.png')
